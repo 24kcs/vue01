@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>每天都被自己帅醒!</title>
+        <link rel="stylesheet" href="">
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+    <div id="app">
+        <input type="text" value="" v-model="msg" @keyup="test1">
+        <input type="text" value="" v-model="msg" @keyup.enter="test2">
+        <input type="text" value="" v-model="msg" @keyup.13="test3">
+    </div>
+        <script type="text/javascript">
+            const vm = new Vue({
+                el:'#app',
+                data:{
+                    msg:'我是文本框'
+                },
+                methods: {
+                    test1(evt){
+                        if(evt.keyCode===13){
+                            console.log('按下了回车')
+                        }
+                    },
+                    test2(){
+                        console.log('按下了回车')
+                    },
+                    test3(){
+                        console.log(this.msg)
+                    }
+                }
+            })
+            // var vm = new Vue({
+            //     el:'#app',
+            //     data:{
+            //         msg:'我是文本框'
+            //     },
+            //     methods:{
+            //         test1(evt){
+            //             if(evt.keyCode===13){
+            //                 console.log(this.msg+'-'+evt.keyCode)
+            //             }
+            //         },
+            //         test2(){
+            //             console.log(this.msg);
+            //         },
+            //         test3(){
+            //             console.log('这也可以');
+            //         }
+            //     }
+            // })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>玉树临风美少年，揽镜自顾夜不眠 </title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="" />
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <!--模版,页面显示的时候,Vue就操作这个模版中的内容(通过对这个模版中的内容进行操作)--->
+    <div id="app">
+        <!---{{}} 叫双大括号语法---Vue中叫插值-->
+        <p>{{msg}}</p>
+    </div>
+    <script type="text/javascript">
+        //实例化Vue,{}中都是一些配置选项
+        const vm = new Vue({
+            el: '#app',//选择器----找到id为app的标签(元素)对这个元素中的内容要进行操作
+            data: {//所有的数据都放在data对象中
+                msg: 'what are you no sha lei '
+            }
+        })
+    </script>
+</body>
+
+</html>

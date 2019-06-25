@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天都被自己帅醒!</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- <div id="app">
+        <h2>插值</h2>
+        <p>需求1:显示插值数据</p>
+        <span>{{msg}}</span>
+        <p>需求2:显示插值的大写</p>
+        <span>{{msg.toUpperCase()}}</span>
+        <p>需求3:显示插值的反转内容</p>
+        <span>{{msg.split(' ').reverse().join(' ')}}</span>
+        <hr>
+        <h2>指令之强制数据绑定</h2>
+        <a href="url">百度</a>
+        <a v-bind:href="url">百度</a>
+        <p>下面的是简写的方式: v-bind这种方式:可以简写为:的形式</p>
+        <a :href="url">百度</a>
+        <hr>
+        <h2>事件监听</h2>
+        <button v-on:click="showMessage1">点我啊1</button>
+        <button v-on:click="showMessage2">点我啊2</button>
+        <button @click="showMessage3">点我啊3</button>
+    </div> -->
+    <div id="app">
+        <h2>插值</h2>
+        <p>需求:显示插值数据</p>
+            <span>{{msg}}</span>
+        <p>需求:现实插值的大写</p>
+            <span>{{msg.toUpperCase()}}</span>
+           
+        <p>需求:现实插值的反转内容</p>
+            <span>{{msg.split(' ').reverse().join('-')}}</span>
+        <h2>指令之数据的强制绑定</h2>
+            <a href="url">百度</a>
+            <a v-bind:href="url">百度</a>
+            <h3>简写的方式: v-bind:属性名-----> :属性名="值"</h3>
+            <a :href="url">百度</a>
+      
+        <h2>事件监听</h2>
+        <button v-on:click="handleClick">按钮1</button>
+        简写的方式:
+        <button @click="handleClick2">按钮2</button>
+        
+    </div>
+    <script type="text/javascript">
+        /**
+         * 
+         * 强制绑定数据:希望某个标签中的某个属性值是动态的值,此时使用v-bind:属性名字
+         * 强制绑定数据:v-bind--->简写--->  :属性名字="值"
+         * 绑定事件监听(添加事件,绑定事件)----> v-on:事件名字="方法"  简写---> @事件名字="方法"
+         * 
+         */
+    const vm = new Vue({
+        //选择器
+        el:'#app',
+        //数据
+        data:{
+            msg:'what Are You No sha lei',
+            url:'http://www.baidu.com'
+        },
+        //方法
+        methods: {
+            handleClick(){
+                alert('啊,我被点了');
+            },
+            handleClick2(e){
+                alert(e.target.innerHTML)
+            },
+            
+
+           
+        }
+      
+    })
+   
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天都被自己帅醒!</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <fieldset>
+            <legend>遍历数组</legend>
+            <ol>
+                <li v-for="per in persons">
+                    {{per.id}}====={{per.name}}===={{per.age}}
+                </li>
+            </ol>
+            <hr>
+            <ul>
+                <li v-for="(per,index) in persons">
+                    索引:{{index}}====姓名:{{per.name}}=====年龄:{{per.age}}
+                </li>
+            </ul>
+        </fieldset>
+        <hr>
+        <fieldset>
+            <legend>遍历对象</legend>
+            <ul>
+                <li v-for="(value,key,index) in obj">
+                    索引:{{index}}====属性名字:{{key}}====属性的值:{{value}}
+                </li>
+            </ul>
+        </fieldset>
+    </div>
+    <script type="text/javascript">
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                3, name: '飞哥', age: 38 },
+                    { id: 4, name: '小乔', age: 18 }
+                ],
+                obj:{
+                    id:10,
+                    name:'欧阳娜娜',
+                    age:20
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天都被自己帅醒!</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <fieldset>
+            <legend>姓名操作</legend>
+            姓氏:
+            <input type="text" placeholder="请输入姓名" v-model="firstName"><br />
+            名字:
+            <input type="text" placeholder="请输入名字" v-model="lastName"><br />
+        </fieldset>
+        <fieldset>
+            <legend>单向和双向操作</legend>
+            姓名(单向操作):<input type="text" placeholder="显示姓名" v-model="fullName1"><br />
+            姓名(单向操作):<input type="text" placeholder="显示姓名" v-model="fullName2"><br />
+            姓名(双向操作):<input type="text" placeholder="显示姓名" v-model="fullName3"><br />
+        </fieldset>
+
+        <p>{{fullName1}}</p>
+        <p>{{fullName1}}</p>
+        <p>{{fullName1}}</p>
+        <p>{{fullName1}}</p>
+        <p>{{fullName1}}</p>
+        <p>{{fullName1}}</p>
+    </div>
+
+    <script type="text/javascript">
+        
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                firstName: '东方',
+                lastName: '不败',
+                fullName2: '哈哈'
+            },
+            //计算属性操作:只要属性的值发生改变,相关联的属性的值发生变化,
+            computed: {
+                //fullName1属性的get操作
+                fullName1() {
+                    console.log('----fullName1---')
+                    //从firstName和lastName的属性中获取(this就是Vue的实例对象)
+                    return this.firstName + '-' + this.lastName
+                },
+                fullName3: {
+                    //获取值的时候发生
+                    get() {
+                        return this.firstName + '-' + this.lastName
+                    },
+                    //设置值的时候发生
+                    set(val) {
+                        //val就是存储的是fullName3的值:欧阳-小花
+                        const name = val.split('-')
+                        this.firstName = name[0]
+                        this.lastName = name[1]
+
+
+                    }
+                }
+            },
+            //监视:第一种写法
+            watch: {
+                firstName(val) {//val就是fitstName的值
+                    this.fullName2 = val + '-' + this.lastName
+                }
+               
+            }
+        })
+
+        //第二种写法:
+        vm.$watch('lastName',function(val){//val就是lastName的值
+            //fullName2值变化
+            this.fullName2=this.firstName+'-'+val
+        })
+
+
+
+    </script>
+</body>
+
+</html>

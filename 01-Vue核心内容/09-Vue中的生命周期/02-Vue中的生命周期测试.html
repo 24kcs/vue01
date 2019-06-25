@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天都被自己帅醒!</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- <button @click="clear">显示效果</button>
+        <p v-show="isOk">你打我啊</p>
+        <input type="text" name="" id="" v-model="test"> -->
+        <button @click="clear">显示效果</button>
+        <p v-show="isOk">你打我啊</p>
+        <input type="text" v-model="test">
+    </div>
+    <script type="text/javascript">
+
+      
+        // var vm = new Vue({
+        //     el:'#app',
+        //     //数据
+        //     data:{
+        //         isOk:true,
+        //         test:'我了个去'
+        //     },
+        //     //方法
+        //     methods:{
+        //         clear(){
+        //             this.$destroy()
+        //         }
+        //     },
+        //     //计算属性
+        //     computed:{
+
+        //     },
+        //     //初始化数据之前
+        //     beforeCreate() {
+        //         console.log('初始化之前====beforeCreate()')
+        //         console.log(this.test)
+        //     },
+        //     //初始化数据之后
+        //     created() {
+        //         console.log('初始化之后====created()')
+        //         console.log(this.test)
+        //     },
+        //     //准备之前
+        //     beforeMount() {
+        //         console.log('准备之前====beforeMount')
+        //     },
+        //     //准备后
+        //     mounted() {
+        //        this.timeId= setInterval(() => {
+        //             this.isOk=!this.isOk
+        //         }, 1000);
+        //         console.log('准备后===mounted()');
+        //     },
+        //     //更新前
+        //     beforeUpdate() {
+        //         console.log('更新之前====beforeUpdate()')
+        //     },
+        //     //更新后
+        //     updated() {
+        //         console.log('更新之后====updated()')
+        //     },
+        //     //销毁前
+        //     beforeDestroy() {
+        //         //销毁前干掉定时器
+        //         clearInterval(this.timeId)
+        //         console.log('销毁vm之前===beforeDestroy()')
+        //     },
+        //     //销毁后
+        //     destroyed() {
+        //         console.log('销毁vm之后====destroyed')
+        //     }
+
+        // })
+    </script>
+</body>
+
+</html>

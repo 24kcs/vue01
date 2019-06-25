@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>每天都被自己帅醒!</title>
+        <link rel="stylesheet" href="">
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+    <div id="app">
+        <h2>1.事件监听</h2>
+       <button @click="showMsg('今天好萌萌啊')">按钮1</button>
+       <button @click="showMsg2($event,'哈哈,好猥琐')">按钮2</button>
+    </div>
+        <script type="text/javascript">
+            const vm = new Vue({
+                el:'#app',
+                data:{
+                },
+                methods: {
+                    showMsg(txt){
+                      
+                       alert(txt)
+
+                    },
+                    showMsg2(e,txt2){//e就是事件参数对象
+                        alert(txt2+'===='+e)
+                    }
+                }
+            })
+
+        </script>
+    </body>
+</html>

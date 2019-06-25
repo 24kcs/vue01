@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>每天都被自己帅醒!</title>
+    <link rel="stylesheet" href="">
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        //为计算属性和监视做铺垫
+        //某个属性的值发生变化,和该属性相关联的属性值也会发生变化
+        var person = {
+            firstName: '东方',//姓氏
+            lastName: '不败'//名字
+        }
+
+        //Object.defineProperty(对象,'要操作的属性名字',配置对象)
+        Object.defineProperty(person, 'fullName', {
+            configurable: true,//设置该属性是否可以被重新定义,默认是false
+            enumerable: true,//该属性是否可以被枚举遍历,默认是false
+            // value:'哈哈',//设置该属性的默认值
+            // writable:true,//设置该属性是否可以被修改,默认是false
+            get() {//获取fullName属性的值----是firstName+lastName属性值
+                return this.firstName + '-' + this.lastName
+            },
+            set(val) {
+                var name = val.split('-')//val=======>欧阳-海柱
+                this.firstName = name[0]
+                this.lastName = name[1]
+            }
+
+        })
+
+
+        //为person对象添加了一个fullName属性
+        person.fullName = person.firstName + '-' + person.lastName
+        console.log(person.fullName+'=====')
+
+        //修改firstName和lastName属性值,fullName值是否改变
+        person.firstName = '欧阳'
+        person.lastName = '海柱'
+        console.log(person.fullName+'-------------------')
+
+
+        //修改fullName属性值,firstName和lastName的属性值是否改变
+        person.fullName = '诸葛-孔明'
+        console.log(person.firstName)
+        console.log(person.lastName)
+
+
+        
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>每天都被自己帅醒!</title>
+        <link rel="stylesheet" href="">
+        <script type="text/javascript" src="../js/vue.js"></script>
+    </head>
+    <body>
+       
+        <div id="app">
+            <input type="text" v-model="msg" >
+            <p>hello{{msg}}</p>
+        </div>
+    <script type="text/javascript">
+        // v-单词---这种写法在Vue中出现,我们叫:指令-----(就是属性)
+        //v-model="变量"------绑定数据
+
+        const vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'哈哈'
+            }
+        })
+    </script>
+
+        <script type="text/javascript">
+
+            /*
+                1. 引入Vue,
+                2. 创建Vue对象
+                3. el:指定根Element(选择器)
+                4. data:初始化数据(页面中访问)
+                5. 指令:v-model(双向数据绑定)
+                6. 显示数据: {{msg}}---插值
+
+                7.理解MVVM
+                M---Model---数据
+                v---View----界面
+                vm---Vue对象---数据绑定和事件监听
+                界面中的进行数据修改,通过事件监听()传递给Model,然后,通过数据绑定再次传送给界面,界面发生变化
+                界面View---事件监听---->Model--->数据绑定--->界面
+
+                Vue操作:指令和插值
+                指令:v-开头
+                插值: {{}}
+            
+            */
+
+            //配置Vue,指定Vue操作哪个区域
+          
+        </script>
+    </body>
+</html>
